@@ -20,8 +20,30 @@ def parse_file(filepath):
 
 
 def calc_similarity(text1, text2):
-    
+    """Calculate the similarity between two texts"""
+    len2 = len(text2)
+    scores = []
+    streak = 0
+    for index1, token_1 in enumerate(text1):
+        score = 0
+        max_dist = max(len2-index1-1, index1) #double check this
 
+        for index2, token_2 in enumerate(text2):
+            if token_1 == token_2:
+                #we have a match
+                streak += 1
+                dist = abs(index2 - index1)
+                score = 1 - (dist/max_dist)
+                break
+
+        scores.append(score)
+        if score == 0:
+            streak = 0
+        if streak == 2:
+            scores.append(1.0)
+            streak = 0
+    average_score = sum(scores)/len(scores)
+    return average_score
 
 
 if __name__ == '__main__':
@@ -33,5 +55,6 @@ if __name__ == '__main__':
     text3 = parse_file(file3)
 
     sim_1_2 = calc_similarity(text1, text2)
+    sim_1_3 = calc_similarity(text1, text3)
 
     print('here')
