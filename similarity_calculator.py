@@ -1,8 +1,6 @@
 
-def parse_file(filepath):
+def tokenize_text(text):
     """Parses a text file into a list of tokens"""
-    with open(filepath, 'r') as f:
-        text = f.readline()
     token_list = []
     cur_token = ''
     for char in text.lower():
@@ -21,14 +19,17 @@ def parse_file(filepath):
 
 def calc_similarity(text1, text2):
     """Calculate the similarity between two texts"""
-    len2 = len(text2)
+    tokens1 = tokenize_text(text1)
+    tokens2 = tokenize_text(text2)
+
+    len2 = len(tokens2)
     scores = []
     streak = 0
-    for index1, token_1 in enumerate(text1):
+    for index1, token_1 in enumerate(tokens1):
         score = 0
         max_dist = max(len2-index1-1, index1) #double check this
 
-        for index2, token_2 in enumerate(text2):
+        for index2, token_2 in enumerate(tokens2):
             if token_1 == token_2:
                 #we have a match
                 streak += 1
@@ -46,15 +47,3 @@ def calc_similarity(text1, text2):
     return average_score
 
 
-if __name__ == '__main__':
-    file1 = './inputs/sample1.txt'
-    file2 = './inputs/sample2.txt'
-    file3 = './inputs/sample3.txt'
-    text1 = parse_file(file1)
-    text2 = parse_file(file2)
-    text3 = parse_file(file3)
-
-    sim_1_2 = calc_similarity(text1, text2)
-    sim_1_3 = calc_similarity(text1, text3)
-
-    print('here')
