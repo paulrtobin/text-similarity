@@ -26,15 +26,17 @@ This app has been placed within a Docker container and pushed to docker hub. In 
 
 3. Open http://0.0.0.0:5000/ in a web browser. The page will look like this: 
 
-https://github.com/paulrtobin/text-similarity/blob/main/docs/Home_page.png
+![home_image](/docs/Home_page.png)
+Format: ![Alt Text](url)
 
 4. Enter some text in the text fields that you'd like to compare, here's an example
 
-https://github.com/paulrtobin/text-similarity/blob/main/docs/Entry_example.png
+![text_image](/docs/Entry_example.png)
+Format: ![Alt Text](url)
 
 5. Press Go!
 
 	The similarity calculation will run and you will be redirected to a page showing the results that
 should look like this: 
 
-https://github.com/paulrtobin/text-similarity/blob/main/docs/Results_page.png
+![GitHub Logo](/docs/Results_page.png)
