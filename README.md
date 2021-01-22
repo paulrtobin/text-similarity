@@ -13,4 +13,15 @@ This app has been placed within a Docker container and pushed to docker hub. In 
 
 `docker run -p 5000:5000 text_sim_image`
 
+   The output should look similar to this:
 
+   ```
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+   ```
+
+3. Open http://0.0.0.0:5000/ in a web browser
