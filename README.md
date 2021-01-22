@@ -24,4 +24,17 @@ This app has been placed within a Docker container and pushed to docker hub. In 
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
    ```
 
-3. Open http://0.0.0.0:5000/ in a web browser
+3. Open http://0.0.0.0:5000/ in a web browser. The page will look like this: 
+
+https://github.com/paulrtobin/text-similarity/blob/main/docs/Home_page.png
+
+4. Enter some text in the text fields that you'd like to compare, here's an example
+
+https://github.com/paulrtobin/text-similarity/blob/main/docs/Entry_example.png
+
+5. Press Go!
+
+	The similarity calculation will run and you will be redirected to a page showing the results that
+should look like this: 
+
+https://github.com/paulrtobin/text-similarity/blob/main/docs/Results_page.png
